@@ -15,7 +15,7 @@ if( ($user_permissions & $required_permissions) == 0) {
 
 $result = array();
 $ages=array();
-$gender_m=$gender_f=0;
+$gender_m=$gender_f=$gender_x=0;
 $cities = array();
 $visits = array();
 $contrib0 = array();
@@ -81,6 +81,7 @@ while($row = mysqli_fetch_array($statsresult,MYSQLI_ASSOC))
 		} elseif( $key == 'gender' ) {
 		    if( $value=='male' || $value=='Male') $gender_m += 1;
 		    elseif( $value=='female' || $value=='Female') $gender_f += 1;
+		    elseif( $value=='x' || $value=='X') $gender_x += 1;
 		} elseif( $key == 'city' ) { //city
 		    if(array_key_exists(strtolower($value), $cities)) {
 		        $cities[strtolower($value)] += 1;
@@ -157,6 +158,7 @@ echo "<tr>";
 echo "<th>Geslacht</th>";
 echo "<td>Man: ".$gender_m." (".round($gender_m/$total * 100) . "%)</td>";
 echo "<td>Vrouw: ".$gender_f." (".round($gender_f/$total * 100) . "%)</td>";
+echo "<td>X: ".$gender_x." (".round($gender_x/$total * 100) . "%)</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<th>Eerste keus</th>";

@@ -46,6 +46,8 @@ if( $_SERVER["REQUEST_METHOD"] == "POST") {
             $filtersql[] = "p.gender = 'male'";    
         } else if( $_POST["gender"] == 'female') {
             $filtersql[] = "p.gender = 'female'";
+        } else if( $_POST["gender"] == 'x') {
+            $filtersql[] = "p.gender = 'x'";
         }
         $gender = $_POST["gender"];
     }
@@ -140,8 +142,8 @@ $resultHTML .= "</table>";
                         <div class="col-sm-10">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="gender" id="both" value="both" <?php if($gender == "both") echo( "checked"); ?> >
-                                    Beide
+                                    <input type="radio" name="gender" id="all" value="all" <?php if($gender == "all") echo( "checked"); ?> >
+                                    Iedereen
                                 </label>
                             </div>
                             <div class="radio">
@@ -154,6 +156,12 @@ $resultHTML .= "</table>";
                                 <label>
                                     <input type="radio" name="gender" id="female" value="female" <?php if($gender == "female") echo( "checked"); ?> >
                                     Jongedame
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="x" value="x" <?php if($gender == "x") echo( "checked"); ?> >
+                                    X
                                 </label>
                             </div>
                         </div>

@@ -407,6 +407,8 @@ function translate_gender($gender) {
     return "Jongeman";
   } else if( $gender == "female" ) {
     return "Jongedame";
+  } else if( $gender == "x" ) {
+    return "X";
   } else {
     return "Onbekend";
   }

@@ -258,6 +258,12 @@ function addError($value) {
                                 Jongedame
                             </label>
                         </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender" id="x" value="x" <?php if($gender == "x") echo( "checked"); ?> >
+                                X
+                            </label>
+                        </div>
                         <label for="gender" class="error" style="display:none;"></label>
                     </div>
                 </div>
